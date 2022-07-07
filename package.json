@@ -37,7 +37,7 @@
     "cover": "babel-node node_modules/.bin/isparta cover --root src --report html node_modules/.bin/_mocha -- $npm_package_options_mocha",
     "coveralls": "babel-node node_modules/.bin/isparta cover --root src --report lcovonly node_modules/.bin/_mocha -- $npm_package_options_mocha && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build": "rimraf lib && babel src --ignore __tests__,public --out-dir lib/ && npm run build:lambda",
-    "build:lambda": "NODE_ENV=development netlify-lambda build handler",
+    "build:lambda": "SET NODE_ENV=development netlify-lambda build handler",
     "download": "babel-node scripts/download.js cache/data.json",
     "serve-public": "babel-node scripts/serve-public",
     "prettier": "prettier --write 'src/**/*.js'",
